@@ -7,6 +7,9 @@ The model is based on Gregg and Carder (1990) and the Water Colour Simulator [WA
 
 Currently, this repository is more a snaphot of previous work and highly unorganized, but should work as a starting point for further development.
 
+[![Code Climate](https://codeclimate.com/github/d70-t/bier/badges/gpa.svg)](https://codeclimate.com/github/d70-t/bier)
+[![Issue Count](https://codeclimate.com/github/d70-t/bier/badges/issue_count.svg)](https://codeclimate.com/github/d70-t/bier)
+
 How it (should) work
 --------------------
 
