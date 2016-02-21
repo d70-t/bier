@@ -25,8 +25,10 @@ class DidNotConverge(Exception):
         super(DidNotConverge, self).__init__(reason)
 
 class FieldModelFitter(object):
-    def __init__(self, field, wvlns, model, guess, lims, weights=None, method='tnc', residuumArgs={}):
+    def __init__(self, field, wvlns, model, guess, lims, weights=None, method='tnc', residuumArgs=None):
         #wvlns must be on last axis of field
+        if residuumArgs is None:
+            residuumArgs = {}
         self.field = field
         self.wvlns = wvlns
         self.model = model

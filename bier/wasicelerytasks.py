@@ -25,7 +25,9 @@ import scipy.optimize
 mc = ModelCache()
 
 @app.task
-def doFit(point, spectrum, guess, wvlns, fixedValues, method, weights=None, limVals=None, constantData={}):
+def doFit(point, spectrum, guess, wvlns, fixedValues, method, weights=None, limVals=None, constantData=None):
+    if constantData is None:
+        constantData = {}
     if method == 'curve_fit':
         syms, func = mc.getModel(wvlns, fixedValues, 'E', weights, constantFieldNames=constantData.keys())
         if len(constantData) > 0:
