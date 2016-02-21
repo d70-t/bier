@@ -1,0 +1,30 @@
+input: /home/users/tobias.koelling/Dokumente/dap2envi/out/20140329_clear_west_VNIR_average.raw
+constants:
+    f_dd: 0
+    f_ds: 0.1 # needed for unit conversion
+    H_oz: 0.4
+    alpha: 2.0
+    beta: 0.101
+    wvl_a: 550
+    RH: .6
+    WV: 0.123
+    P: 1013.25
+    AM: 1.0127
+    theta_sun: True
+    el: True
+    sca: True
+    t: 0.144
+    g_dsr: 0.068
+guess:
+    beta: .101
+    WV: .123
+    g_dsr: .01
+    g_dsa: .01
+    AM: 1
+lims:
+    beta:  [0, 20]
+    WV:    [0, 20]
+    g_dsr: [0, 1000]
+    g_dsa: [0, 1000]
+    AM:    [0, 5]
+weights: ../weight.txt

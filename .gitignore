@@ -1,0 +1,8 @@
+*.pyc
+*.npy
+/.compiledir_*
+*.prof
+/pstats
+fitres_*.txt
+*.swp
+

@@ -1,0 +1,57 @@
+input: /home/users/tobias.koelling/Dokumente/dap2envi/out/20140329_clear_west_VNIR_average.raw
+wvlnskip:
+    before: 168
+    after:  54
+fitMethod: tnc
+fitter: GlobalFitter
+fitMinimumElevation: 25 #degrees
+constants:
+    f_dd: 0
+    f_ds: 0.1 # needed for unit conversion
+    H_oz: 0.4
+    #alpha: 2.0
+    #beta: 0.101
+    wvl_a: 550
+    RH: .6
+    WV: 0.123
+    P: 1013.25
+    AM: 1.0127
+    theta_sun: True
+    el: True
+    sca: True
+    #t: 0.144
+    #g_dsr: 0.068
+    #g_dsa: 0
+    bs: 0
+    gbs: 0
+guess:
+    H_oz: 0.4
+    alpha: 2.0
+    beta: .101
+    RH: .6
+    P: 1013.25
+    WV: .123
+    g_dsr: .01
+    g_dsa: .01
+    AM: 1
+    bs: .45
+    gbs: .115
+    gfs: .4
+    t:   .2
+    hsc: .5
+lims:
+    H_oz:  [0, 2]
+    alpha: [0, 5]
+    beta:  [0, 20]
+    RH:    [0, 1]
+    P:     [100, 1100]
+    AM:    [0, 5]
+    WV:    [0, 20]
+    g_dsr: [0, 1000]
+    g_dsa: [0, 1000]
+    bs:    [0, 2]
+    gbs:   [0, 1]
+    gfs:   [0, 1]
+    t:     [0, 1]
+    hsc:   [0, 1]
+weights: ../weight.txt

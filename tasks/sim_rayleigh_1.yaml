@@ -1,0 +1,29 @@
+input: /usr/users/tobias.koelling/Dokumente/pyradtran/test_out_ml_summer_no_abs.raw
+constants:
+    f_dd: 0
+    f_ds: 1
+    H_oz: 0.4
+    alpha: 2.0
+    wvl_a: 550
+    RH: .6
+    P: 1013.25
+    AM: 1
+    WV: 0
+    beta: 0
+    g_dsa: 0
+    theta_sun: True
+    el: True
+    sca: True
+    t: 0.144
+guess:
+    beta: .13
+    WV: .1
+    g_dsr: .01
+    g_dsa: .01
+lims:
+    beta:  [0, 20]
+    WV:    [0, 20]
+    g_dsr: [0, 1000]
+    g_dsa: [0, 1000]
+weights: ../weight.txt
+
