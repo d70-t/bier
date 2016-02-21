@@ -9,6 +9,7 @@ Currently, this repository is more a snaphot of previous work and highly unorgan
 
 [![Code Climate](https://codeclimate.com/github/d70-t/bier/badges/gpa.svg)](https://codeclimate.com/github/d70-t/bier)
 [![Issue Count](https://codeclimate.com/github/d70-t/bier/badges/issue_count.svg)](https://codeclimate.com/github/d70-t/bier)
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/b9c07d4c1fd346b4b1c0b7e5264ad8f6/badge.svg)](https://www.quantifiedcode.com/app/project/b9c07d4c1fd346b4b1c0b7e5264ad8f6)
 
 How it (should) work
 --------------------
