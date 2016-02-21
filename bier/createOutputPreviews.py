@@ -30,7 +30,6 @@ from batchhelpers import fillModelConstantsFromSourceAndTaskDef
 from rayleigh import verticalRayleighCoefficient, sca2rayleigh
 
 from runmacs.spec.util.specrend import SpecRGBConverter, postProcessRGB
-from runmacs.spec.util.sensorparameters import sensorParameters
 
 import pint
 
@@ -82,10 +81,7 @@ if __name__ == '__main__':
     unitConversionFactor = source.units.to(targetRadianceUnits).magnitude
     print u"conversion factor:", unitConversionFactor
     extent = np.rad2deg(np.array([source.grid[0,0,0], source.grid[0,0,-1], source.grid[1,0,0], source.grid[1,-1,0]]))
-    wvlns = source.wvlns
-    if wvlns is None:
-        wvlns = sensorParameters['vnir']['loadWavelength']()
-    wvlns = np.array(wvlns)
+    wvlns = np.array(source.wvlns)
 
     rend = SpecRGBConverter(wvlns)
     rgbSource = rend.spectrum_to_rgb(source.data, postprocess=False)

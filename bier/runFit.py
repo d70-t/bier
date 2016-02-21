@@ -30,13 +30,11 @@ from progressbar import ProgressBar
 from wasienvi import WasiEnvi
 from batchhelpers import fillModelConstantsFromSourceAndTaskDef
 
-from runmacs.spec.util.sensorparameters import sensorParameters
-
 fitters = {'ZmqFitter': ZmqFitter,
            'CeleryFitter': CeleryFitter,
            'GlobalFitter': GlobalFitter}
 
-if __name__ == '__main__':
+def _main():
     import argparse
     import yaml
 
@@ -53,10 +51,7 @@ if __name__ == '__main__':
     taskDef = yaml.load(open(args.definitionfile))
 
     source = WasiEnvi(taskDef['input'])
-    wvlns = source.wvlns
-    if wvlns is None:
-        wvlns = sensorParameters['vnir']['loadWavelength']()
-    wvlns = np.array(wvlns)
+    wvlns = np.array(source.wvlns)
     spectrumSlice = slice(None)
 
     data = source.data[...,spectrumSlice]
@@ -124,3 +119,6 @@ if __name__ == '__main__':
     print 'result variables are:', fitter.paramNames
     print 'duration was:', (end-start)
 
+
+if __name__ == '__main__':
+    _main()
