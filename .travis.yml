@@ -1,0 +1,16 @@
+language: python
+python:
+    - 2.7
+    - 3.3
+    - 3.4
+    - 3.5
+    - nightly
+sudo: false
+install:
+    - pip install -r requirements.txt
+    - pip install -r test-requirements.txt
+script:
+    - nosetests --with-coverage --cover-package=bier --cover-branches test
+    - coverage xml
+after_success:
+    - codecov
