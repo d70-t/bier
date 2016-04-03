@@ -5,7 +5,15 @@
 
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
-#init-hook=
+#
+# look for any parent folder seemingly containing the bier module
+init-hook=import os
+ _check = lambda p: os.path.exists(os.path.join(p, "bier", "__init__.py")) and os.path.exists(os.path.join(p, "pylintrc"))
+ d = os.getcwd()
+ e = "x"
+ while e and not _check(d): d, e = os.path.split(d)
+ import sys
+ sys.path.append(d)
 
 # Profiled execution.
 profile=no
