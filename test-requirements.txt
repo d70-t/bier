@@ -1,2 +1,7 @@
 codecov
 coverage
+
+numpy
+scipy
+sympy
+theano
